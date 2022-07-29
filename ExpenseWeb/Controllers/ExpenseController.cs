@@ -275,7 +275,7 @@ namespace ExpenseWeb.Controllers
                 if (i == 2)
                 {
                     var r = client.PostAsJsonAsync<MExpense>("Expense", e);
-                    r.Wait();
+                 //   r.Wait();
 
                     var result = r.Result;
 
@@ -287,12 +287,12 @@ namespace ExpenseWeb.Controllers
 
 
                     var r = client.GetAsync("Expense/" + id.ToString());
-                    r.Wait();
+                 //   r.Wait();
 
                     var result = r.Result;
 
                     var readjob = result.Content.ReadAsAsync<MExpense>();
-                    readjob.Wait();
+                //    readjob.Wait();
                     e = readjob.Result;
 
                 }
@@ -300,7 +300,7 @@ namespace ExpenseWeb.Controllers
                 {
 
                     var r = client.PutAsJsonAsync<MExpense>("Expense/" + e.Id, e);
-                    r.Wait();
+              //      r.Wait();
 
                     var result = r.Result;
 
@@ -312,12 +312,12 @@ namespace ExpenseWeb.Controllers
 
 
                     var r = client.DeleteAsync("Expense/" + id.ToString());
-                    r.Wait();
+            //        r.Wait();
 
                     var result = r.Result;
 
                     var readjob = result.Content.ReadAsAsync<MExpense>();
-                    readjob.Wait();
+            //        readjob.Wait();
 
                 }
 
